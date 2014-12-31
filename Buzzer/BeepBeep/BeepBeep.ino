@@ -13,11 +13,19 @@ void setup()  {
 void loop()  { 
   //beep(100); 
   
+  toneIt();
+  
   read(A0);
 }
 
+void toneIt(unsigned char delayms) {
+  tone(9, 10);
+  delay(delayms);
+  noTone(9);
+}
+
 void beep(unsigned char delayms){
-  analogWrite(9, 30);      // Almost any value can be used except 0 and 255
+  analogWrite(9, 10);      // Almost any value can be used except 0 and 255
                            // experiment to get the best tone
   delay(delayms);          // wait for a delayms ms
   analogWrite(9, 0);       // 0 turns it off
